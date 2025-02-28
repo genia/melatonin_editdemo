@@ -1,0 +1,21 @@
+<ComponentTemplates>
+    
+    <component label="Component" type="juce::Component" name="component" x="0" y="0" width="100" height="100"/>
+    
+    <component label="TextButton" type="juce::TextButton" name="text button" x="0" y="0" width="40" height="24" buttonText="text button"/>
+
+    <component label="Checkbox" type="juce::ToggleButton" name="toggle button" x="0" y="0" width="40" height="24" buttonText="toggle button"/>
+
+    <component label="ImageButton" type="juce::ImageButton" name="image button" x="416" y="16" width="24" height="24" buttonText="image button"/>
+
+    <component label="DrawableButton" type="juce::DrawableButton" name="drawable button" x="416" y="16" width="24" height="24" sourceFile="compress.svg"/>
+
+    <component label="Label" type="juce::Label" name="label" x="0" y="0" width="40" height="24" labelText="label"/>
+    
+    <component label="TextEditor" type="juce::TextEditor" name="edittext" x="0" y="0" width="200" height="100"/>
+    
+    <component label="HorizSlider" type="juce::Slider" name="horiz slider" x="0" y="0" width="200" height="24" min="1" max="10" int="1" style="LinearHorizontal"/>
+    
+    <component label="VertSlider" type="juce::Slider" name="vert slider" x="0" y="0" width="30" height="183" min="0" max="100" int="1" style="LinearVertical"/>
+    
+</ComponentTemplates>

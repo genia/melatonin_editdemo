@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<JUCERPROJECT id="M0ZisP" name="melatonin_editdemo" projectType="guiapp" useAppConfig="0"
+              addUsingNamespaceToJuceHeader="0" jucerFormatVersion="1" defines="JUCE_MODAL_LOOPS_PERMITTED=1">
+  <MAINGROUP id="ajICA9" name="melatonin_editdemo">
+    <GROUP id="{3C94555B-A819-13CE-E25C-2399163A2AE7}" name="melatonin">
+      <GROUP id="{FA84473F-035E-C04E-79E3-9E96B583CE3A}" name="resources">
+        <FILE id="QZtrdo" name="delete.svg" compile="0" resource="1" file="Source/melatonin/resources/delete.svg"
+              xcodeResource="1"/>
+        <FILE id="mDJSht" name="download.svg" compile="0" resource="1" file="Source/melatonin/resources/download.svg"
+              xcodeResource="1"/>
+        <FILE id="MICP3t" name="tackBottom.svg" compile="0" resource="1" file="Source/melatonin/resources/tackBottom.svg"
+              xcodeResource="1"/>
+        <FILE id="hIB8Jf" name="tackLeft.svg" compile="0" resource="1" file="Source/melatonin/resources/tackLeft.svg"
+              xcodeResource="1"/>
+        <FILE id="RXiNeR" name="tackRight.svg" compile="0" resource="1" file="Source/melatonin/resources/tackRight.svg"
+              xcodeResource="1"/>
+        <FILE id="r0oJUY" name="tackTop.svg" compile="0" resource="1" file="Source/melatonin/resources/tackTop.svg"
+              xcodeResource="1"/>
+        <FILE id="XEM7Oq" name="widgets.svg" compile="0" resource="1" file="Source/melatonin/resources/widgets.svg"
+              xcodeResource="1"/>
+      </GROUP>
+      <FILE id="p9RGnA" name="MyComponentBuilder.cpp" compile="1" resource="0"
+            file="Source/melatonin/MyComponentBuilder.cpp"/>
+      <FILE id="SsUV51" name="MyComponentBuilder.hpp" compile="0" resource="0"
+            file="Source/melatonin/MyComponentBuilder.hpp"/>
+      <FILE id="AvHTF3" name="MyRelativeCoordinatePositioner.cpp" compile="1"
+            resource="0" file="Source/melatonin/MyRelativeCoordinatePositioner.cpp"/>
+      <FILE id="K36Lpx" name="MyRelativeCoordinatePositioner.hpp" compile="0"
+            resource="0" file="Source/melatonin/MyRelativeCoordinatePositioner.hpp"/>
+    </GROUP>
+    <GROUP id="{8A67F497-7505-D0BD-290E-FBEE19133442}" name="Source">
+      <GROUP id="{C3FD3782-2F21-A136-04B3-3838CF4832F0}" name="nlohmann">
+        <FILE id="V6GZ1b" name="json.hpp" compile="0" resource="0" file="Source/nlohmann/json.hpp"/>
+      </GROUP>
+      <FILE id="eMV8U3" name="PJNotifier.cpp" compile="1" resource="0" file="Source/PJNotifier.cpp"/>
+      <FILE id="jI5GXR" name="PJNotifier.hpp" compile="0" resource="0" file="Source/PJNotifier.hpp"/>
+      <FILE id="qaj2EJ" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>
+      <FILE id="E43ylT" name="MainComponent.h" compile="0" resource="0" file="Source/MainComponent.h"/>
+      <FILE id="dBX55b" name="MainComponent.cpp" compile="1" resource="0"
+            file="Source/MainComponent.cpp"/>
+    </GROUP>
+    <FILE id="vc280M" name="ComponentTemplates.xml" compile="0" resource="1"
+          file="Source/ComponentTemplates.xml" xcodeResource="1"/>
+  </MAINGROUP>
+  <MODULES>
+    <MODULE id="juce_core" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_data_structures" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_events" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_graphics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_gui_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_gui_extra" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="melatonin_inspector" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+  </MODULES>
+  <JUCEOPTIONS JUCE_STRICT_REFCOUNTEDPOINTER="1"/>
+  <EXPORTFORMATS>
+    <VS2022 targetFolder="Builds/VisualStudio2022">
+      <CONFIGURATIONS>
+        <CONFIGURATION isDebug="1" name="Debug" targetName="NewProject"/>
+        <CONFIGURATION isDebug="0" name="Release" targetName="NewProject"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_core" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_data_structures" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_events" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_graphics" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_gui_basics" path="../JUCE/modules"/>
+        <MODULEPATH id="melatonin_inspector" path="modules"/>
+        <MODULEPATH id="juce_gui_extra" path="../JUCE/modules"/>
+      </MODULEPATHS>
+    </VS2022>
+    <XCODE_MAC targetFolder="Builds/MacOSX">
+      <CONFIGURATIONS>
+        <CONFIGURATION isDebug="1" name="Debug" targetName="NewProject"/>
+        <CONFIGURATION isDebug="0" name="Release" targetName="NewProject"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_core" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_data_structures" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_events" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_graphics" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_gui_basics" path="../JUCE/modules"/>
+        <MODULEPATH id="melatonin_inspector" path="modules"/>
+        <MODULEPATH id="juce_gui_extra" path="../JUCE/modules"/>
+      </MODULEPATHS>
+    </XCODE_MAC>
+  </EXPORTFORMATS>
+</JUCERPROJECT>
