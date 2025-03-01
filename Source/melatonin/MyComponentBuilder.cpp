@@ -9,7 +9,8 @@
 #include "MyComponentBuilder.hpp"
 #include "MyRelativeCoordinatePositioner.hpp"
 
-Slider::SliderStyle sliderStyleValue( String styleStr )
+Slider::SliderStyle
+MyComponentBuilder::sliderStyleValue( String styleStr )
 {
 #define Q(boo) #boo
 #define StyleVal( str ) if (styleStr == Q(str)) return juce::Slider::str;
@@ -247,10 +248,10 @@ BoxModel::initButton( juce::DrawableButton &button, juce::Label &label, const Id
 void BoxModel::moreLayout()
 {
     const std::array<std::tuple<juce::DrawableButton &, juce::Label &, Identifier, std::string>, 4> buttonDescArray = {{
-        {tackTopToParentButton, topToParentLabel, "topToParentEnabled", "tackTop.svg", },
-        {tackRightToParentButton, rightToParentLabel, "rightToParentEnabled", "tackRight.svg" },
-        {tackBottomToParentButton, bottomToParentLabel, "bottomToParentEnabled", "tackBottom.svg", },
-        {tackLeftToParentButton, topToParentLabel, "leftToParentEnabled", "tackLeft.svg"}
+        {insetTopButton, topInsetLabel, "topInsetEnabled", "insetTop.svg", },
+        {insetRightButton, rightInsetLabel, "rightInsetEnabled", "insetRight.svg" },
+        {insetBottomButton, bottomInsetLabel, "bottomInsetEnabled", "insetBottom.svg", },
+        {insetLeftButton, topInsetLabel, "leftInsetEnabled", "insetLeft.svg"}
     }};
 
     for (auto [ button, label, property, filename ] : buttonDescArray)
@@ -274,17 +275,17 @@ void BoxModel::resized()
     byLabel.setBounds (center.getX() - 10, center.getY() - 15, 20, labelHeight);
     heightLabel.setBounds (center.getX() + 10, center.getY() - 15, paddingToParent, labelHeight);
     
-    topToParentLabel.setBounds (center.getX() - paddingToParent / 2, padding + paddingToParent / 2 - labelHeight / 2 - 3, paddingToParent, labelHeight);
-    tackTopToParentButton.setTopLeftPosition(topToParentLabel.getX()-buttonDistance, topToParentLabel.getY() + topToParentLabel.getHeight()/4);
+    topInsetLabel.setBounds (center.getX() - paddingToParent / 2, padding + paddingToParent / 2 - labelHeight / 2 - 3, paddingToParent, labelHeight);
+    insetTopButton.setTopLeftPosition(topInsetLabel.getX()-buttonDistance, topInsetLabel.getY() + topInsetLabel.getHeight()/4);
     
-    rightToParentLabel.setBounds (getWidth() - padding - paddingToParent / 2 - paddingToParent / 2, center.getY() - labelHeight / 2, paddingToParent, labelHeight);
-    tackRightToParentButton.setTopLeftPosition(rightToParentLabel.getX() + (rightToParentLabel.getWidth() - tackRightToParentButton.getWidth())/2, rightToParentLabel.getY() - buttonDistance);
+    rightInsetLabel.setBounds (getWidth() - padding - paddingToParent / 2 - paddingToParent / 2, center.getY() - labelHeight / 2, paddingToParent, labelHeight);
+    insetRightButton.setTopLeftPosition(rightInsetLabel.getX() + (rightInsetLabel.getWidth() - insetRightButton.getWidth())/2, rightInsetLabel.getY() - buttonDistance);
     
-    bottomToParentLabel.setBounds (center.getX() - paddingToParent / 2, getHeight() - padding - paddingToParent / 2 - labelHeight / 2 + 3, paddingToParent, labelHeight);
-    tackBottomToParentButton.setTopLeftPosition(bottomToParentLabel.getX()-buttonDistance, bottomToParentLabel.getY() + bottomToParentLabel.getHeight()/4);
+    bottomInsetLabel.setBounds (center.getX() - paddingToParent / 2, getHeight() - padding - paddingToParent / 2 - labelHeight / 2 + 3, paddingToParent, labelHeight);
+    insetBottomButton.setTopLeftPosition(bottomInsetLabel.getX()-buttonDistance, bottomInsetLabel.getY() + bottomInsetLabel.getHeight()/4);
     
-    leftToParentLabel.setBounds (padding + paddingToParent / 2 - paddingToParent / 2, center.getY() - labelHeight / 2, paddingToParent, labelHeight);
-    tackLeftToParentButton.setTopLeftPosition(leftToParentLabel.getX() + (leftToParentLabel.getWidth() - tackLeftToParentButton.getWidth())/2, leftToParentLabel.getY() - buttonDistance);
+    leftInsetLabel.setBounds (padding + paddingToParent / 2 - paddingToParent / 2, center.getY() - labelHeight / 2, paddingToParent, labelHeight);
+    insetLeftButton.setTopLeftPosition(leftInsetLabel.getX() + (leftInsetLabel.getWidth() - insetLeftButton.getWidth())/2, leftInsetLabel.getY() - buttonDistance);
     
     auto area1 = bounds.reduced (paddingToParent)
         .removeFromTop (padding)
@@ -320,25 +321,25 @@ void BoxModel::componentModelChanged (ComponentModel&)
     MyRelativeCoordinatePositioner *mrp = dynamic_cast<MyRelativeCoordinatePositioner*>( comp->getPositioner() );
     if (mrp != nullptr)
     {
-        tackRightToParentButton.setEnabled(true);
-        tackRightToParentButton.setToggleState(mrp->params["rightToParentEnabled"].getValue(), juce::dontSendNotification);
-        tackLeftToParentButton.setEnabled(true);
-        tackLeftToParentButton.setToggleState(mrp->params["leftToParentEnabled"].getValue(), juce::dontSendNotification);
-        tackTopToParentButton.setEnabled(true);
-        tackTopToParentButton.setToggleState(mrp->params["topToParentEnabled"].getValue(), juce::dontSendNotification);
-        tackBottomToParentButton.setEnabled(true);
-        tackBottomToParentButton.setToggleState(mrp->params["bottomToParentEnabled"].getValue(), juce::dontSendNotification);
+        insetRightButton.setEnabled(true);
+        insetRightButton.setToggleState(mrp->params["rightInsetEnabled"].getValue(), juce::dontSendNotification);
+        insetLeftButton.setEnabled(true);
+        insetLeftButton.setToggleState(mrp->params["leftInsetEnabled"].getValue(), juce::dontSendNotification);
+        insetTopButton.setEnabled(true);
+        insetTopButton.setToggleState(mrp->params["topInsetEnabled"].getValue(), juce::dontSendNotification);
+        insetBottomButton.setEnabled(true);
+        insetBottomButton.setToggleState(mrp->params["bottomInsetEnabled"].getValue(), juce::dontSendNotification);
     }
     else
     {
-        tackRightToParentButton.setEnabled(false);
-        tackRightToParentButton.setToggleState(false, juce::dontSendNotification);
-        tackLeftToParentButton.setEnabled(false);
-        tackLeftToParentButton.setToggleState(false, juce::dontSendNotification);
-        tackTopToParentButton.setEnabled(false);
-        tackTopToParentButton.setToggleState(false, juce::dontSendNotification);
-        tackBottomToParentButton.setEnabled(false);
-        tackBottomToParentButton.setToggleState(false, juce::dontSendNotification);
+        insetRightButton.setEnabled(false);
+        insetRightButton.setToggleState(false, juce::dontSendNotification);
+        insetLeftButton.setEnabled(false);
+        insetLeftButton.setToggleState(false, juce::dontSendNotification);
+        insetTopButton.setEnabled(false);
+        insetTopButton.setToggleState(false, juce::dontSendNotification);
+        insetBottomButton.setEnabled(false);
+        insetBottomButton.setToggleState(false, juce::dontSendNotification);
     }
 }
 
@@ -480,22 +481,6 @@ String sliderStyleString( Slider::SliderStyle style )
                                          @see setMinValue, setMaxValue */
     StyleStr(ThreeValueVertical)
     return "";
-}
-
-String sliderText( Component *c )
-{
-    if (auto* slider = dynamic_cast<juce::Slider*> (c))
-    {
-        return
-        " min=\"" + String(slider->getMinimum()) + "\"" +
-        " max=\"" + String(slider->getMaximum()) + "\"" +
-        " int=\"" + String(slider->getInterval()) + "\"" +
-        " style=\"" + sliderStyleString( slider->getSliderStyle() ) + "\"";
-    }
-    return "";
-    //min="1.0"
-    //max="10.0" int="0.0" style="LinearHorizontal" textBoxPos="NoTextBox"
-    //textBoxEditable="0" textBoxWidth="80" textBoxHeight="20"
 }
 
 ValueTree walkComponent( Component *c )

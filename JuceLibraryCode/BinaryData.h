@@ -8,23 +8,23 @@
 
 namespace BinaryData
 {
+    extern const char*   insetBottom_svg;
+    const int            insetBottom_svgSize = 214;
+
+    extern const char*   insetLeft_svg;
+    const int            insetLeft_svgSize = 211;
+
+    extern const char*   insetRight_svg;
+    const int            insetRight_svgSize = 213;
+
+    extern const char*   insetTop_svg;
+    const int            insetTop_svgSize = 216;
+
     extern const char*   delete_svg;
     const int            delete_svgSize = 507;
 
     extern const char*   download_svg;
     const int            download_svgSize = 245;
-
-    extern const char*   tackBottom_svg;
-    const int            tackBottom_svgSize = 214;
-
-    extern const char*   tackLeft_svg;
-    const int            tackLeft_svgSize = 211;
-
-    extern const char*   tackRight_svg;
-    const int            tackRight_svgSize = 213;
-
-    extern const char*   tackTop_svg;
-    const int            tackTop_svgSize = 216;
 
     extern const char*   widgets_svg;
     const int            widgets_svgSize = 392;

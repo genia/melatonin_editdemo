@@ -24,20 +24,20 @@ MyRelativeCoordinatePositioner::fitToParent( bool shouldFit )
     if (shouldFit)
     {
         params["rightToParent"] = 0;
-        params["rightToParentEnabled"] = true;
+        params["rightInsetEnabled"] = true;
         params["leftToParent"] = 0;
-        params["leftToParentEnabled"] = true;
+        params["leftInsetEnabled"] = true;
         params["topToParent"] = 0;
-        params["topToParentEnabled"] = true;
+        params["topInsetEnabled"] = true;
         params["bottomToParent"] = 0;
-        params["bottomToParentEnabled"] = true;
+        params["bottomInsetEnabled"] = true;
     }
     else
     {
-        params["rightToParentEnabled"] = false;
-        params["leftToParentEnabled"] = false;
-        params["topToParentEnabled"] = false;
-        params["bottomToParentEnabled"] = false;
+        params["rightInsetEnabled"] = false;
+        params["leftInsetEnabled"] = false;
+        params["topInsetEnabled"] = false;
+        params["bottomInsetEnabled"] = false;
     }
 }
 
@@ -86,11 +86,11 @@ void MyRelativeCoordinatePositioner::componentMovedOrResized (Component &p, bool
         if (mrp != nullptr)
         {
             Rectangle<int> childBounds = childComp->getBounds();
-            if (mrp->params["rightToParentEnabled"].getValue())
+            if (mrp->params["rightInsetEnabled"].getValue())
             {
                 int pWidth = p.getWidth();
                 int newRight = pWidth - (int)mrp->params["rightToParent"].getValue();
-                if (mrp->params["leftToParentEnabled"].getValue())
+                if (mrp->params["leftInsetEnabled"].getValue())
                 {
                     childBounds.setRight( newRight );
                 }
@@ -99,11 +99,11 @@ void MyRelativeCoordinatePositioner::componentMovedOrResized (Component &p, bool
                     childBounds = childBounds.withRightX( newRight );
                 }// if it's just left, don't do anything
             }
-            if (mrp->params["bottomToParentEnabled"].getValue())
+            if (mrp->params["bottomInsetEnabled"].getValue())
             {
                 int pHeight = p.getHeight();
                 int newBottom = pHeight - (int)mrp->params["bottomToParent"].getValue();
-                if (mrp->params["topToParentEnabled"].getValue())
+                if (mrp->params["topInsetEnabled"].getValue())
                 {
                     childBounds.setBottom( newBottom );
                 }

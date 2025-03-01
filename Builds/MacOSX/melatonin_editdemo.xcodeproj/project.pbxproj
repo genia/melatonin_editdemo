@@ -12,6 +12,7 @@
 		0EFF6765972953ED7CEEC862 /* Main.cpp */ = {isa = PBXBuildFile; fileRef = 54A4DD4565AFC7BB3ABDBA86; };
 		0F1CC56F839FD3EBDA5622EB /* include_juce_core.mm */ = {isa = PBXBuildFile; fileRef = 50658F7D9B4F411C6497AF3F; };
 		11184990744676397549C897 /* Metal.framework */ = {isa = PBXBuildFile; fileRef = F9C75E0AFDE0092DA69614A3; settings = { ATTRIBUTES = (Weak, ); }; };
+		1397490595E857E470581C32 /* insetTop.svg */ = {isa = PBXBuildFile; fileRef = FA68BC956B40F16BCA91B038; };
 		1724542A8441DB90A86E58B9 /* BinaryData.cpp */ = {isa = PBXBuildFile; fileRef = 57D01CBFFE2DD87792D2FC33; };
 		17C4DEE10E01AFDA738F803E /* delete.svg */ = {isa = PBXBuildFile; fileRef = CC68D34DC5E18F393DD43518; };
 		18C2247CD9825F20057E6FF2 /* MetalKit.framework */ = {isa = PBXBuildFile; fileRef = BBB8FAB97D2FB4D8FCDBBC7C; settings = { ATTRIBUTES = (Weak, ); }; };
@@ -20,23 +21,22 @@
 		3747CF714809E51CDB6695EE /* widgets.svg */ = {isa = PBXBuildFile; fileRef = 5C0CE05BBC051B85DB5B5559; };
 		3C635FBBD4B4BCAB451A5F80 /* IOKit.framework */ = {isa = PBXBuildFile; fileRef = 7366DD5272BB57029A9186FE; };
 		3D9D25B4DCAD168DEC83B6B0 /* Cocoa.framework */ = {isa = PBXBuildFile; fileRef = 3341671124AC7714F99BCBBC; };
-		5C0029D66B1E58986EADD935 /* tackTop.svg */ = {isa = PBXBuildFile; fileRef = E3BA243DD707B6C90B642FB7; };
+		3E5D7298F6E710B5FDE6CB3D /* insetRight.svg */ = {isa = PBXBuildFile; fileRef = F4AFFACBC099FF282E1ABCD3; };
 		600B1F230A284FE47FEF8EE8 /* MyRelativeCoordinatePositioner.cpp */ = {isa = PBXBuildFile; fileRef = 10B1860B2BEEAA2B7789A853; };
+		6EF7AFCBBBBE99D6DE87B40B /* insetLeft.svg */ = {isa = PBXBuildFile; fileRef = 8F0FBFCD8C9AA8FE2659992E; };
 		6FFD8F3C5D189306DCFFE626 /* include_juce_graphics.mm */ = {isa = PBXBuildFile; fileRef = 7019660A8E5D5077F88C38EB; };
-		762FED7D97D8131B1B131905 /* tackBottom.svg */ = {isa = PBXBuildFile; fileRef = 99AFFECB00AD3C6399A6748F; };
 		76544CFE389B297562FAAD1F /* include_juce_events.mm */ = {isa = PBXBuildFile; fileRef = 3EB4AB8626E694E7B9B2994D; };
 		799329291651632D25128454 /* MainComponent.cpp */ = {isa = PBXBuildFile; fileRef = 993EEA814BF16CAC888524A9; };
 		88165CFCFD79C5031726896C /* include_juce_gui_basics.mm */ = {isa = PBXBuildFile; fileRef = 7829A1D1B629A675861037A7; };
 		8C273B7D2D775660A9E489A5 /* PJNotifier.cpp */ = {isa = PBXBuildFile; fileRef = BF46ABF78578C4AA2DF3D0BF; };
 		9E83AB1C0794F4205BA930A0 /* MyComponentBuilder.cpp */ = {isa = PBXBuildFile; fileRef = 43D22CA898541A4A984B6026; };
 		A06537A30C0D0CF441CEA658 /* RecentFilesMenuTemplate.nib */ = {isa = PBXBuildFile; fileRef = 9B3A7742C73042353F310BEB; };
+		AAC981B3BE03C22EAF535CF7 /* insetBottom.svg */ = {isa = PBXBuildFile; fileRef = F9073FF126163ADB51CEA02E; };
 		BCA4DBF9EFCBC353C3F8BAA9 /* include_juce_data_structures.mm */ = {isa = PBXBuildFile; fileRef = A797AFFEC80EAA6F33BCA503; };
 		BDAF3BFF38CD5C748A46A61E /* Security.framework */ = {isa = PBXBuildFile; fileRef = 455AB18848EF073D529979B2; };
-		C70531475FCBF5A5ED78DC65 /* tackLeft.svg */ = {isa = PBXBuildFile; fileRef = 4D3F1E2BAE842AED6CE0E02F; };
 		C9FC99C6CB2AE7781BB2383D /* include_juce_gui_extra.mm */ = {isa = PBXBuildFile; fileRef = 4C7CD8B417CC44D0DB3B06A7; };
 		CDCDB2A27039CB5E29129169 /* QuartzCore.framework */ = {isa = PBXBuildFile; fileRef = 8FD8DEEF1984AE27ACB16D74; };
 		DD1AA9C8F9EEB6BF9E53AFCC /* include_juce_graphics_Sheenbidi.c */ = {isa = PBXBuildFile; fileRef = 5155AF6ED5DA3C6A497A7544; };
-		DF040D2CD6488FD0D6228DF9 /* tackRight.svg */ = {isa = PBXBuildFile; fileRef = 94818BDE04B0AF26FC1B92C9; };
 		E7AF843FC959C55CAC7EACB9 /* include_melatonin_inspector.cpp */ = {isa = PBXBuildFile; fileRef = CB8D7ABB89098CAE2B39DA6F; };
 		EC2225A60ECF8EBD8DF2E39A /* include_juce_core_CompilationTime.cpp */ = {isa = PBXBuildFile; fileRef = D3E174E549DDC00C32725BF7; };
 		F0A878472B7774A9C604241B /* App */ = {isa = PBXBuildFile; fileRef = DFCEE13EBBDF444506627BCE; };
@@ -56,7 +56,6 @@
 		43D22CA898541A4A984B6026 /* MyComponentBuilder.cpp */ /* MyComponentBuilder.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = MyComponentBuilder.cpp; path = ../../Source/melatonin/MyComponentBuilder.cpp; sourceTree = SOURCE_ROOT; };
 		455AB18848EF073D529979B2 /* Security.framework */ /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		4C7CD8B417CC44D0DB3B06A7 /* include_juce_gui_extra.mm */ /* include_juce_gui_extra.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_gui_extra.mm; path = ../../JuceLibraryCode/include_juce_gui_extra.mm; sourceTree = SOURCE_ROOT; };
-		4D3F1E2BAE842AED6CE0E02F /* tackLeft.svg */ /* tackLeft.svg */ = {isa = PBXFileReference; lastKnownFileType = file.svg; name = tackLeft.svg; path = ../../Source/melatonin/resources/tackLeft.svg; sourceTree = SOURCE_ROOT; };
 		50658F7D9B4F411C6497AF3F /* include_juce_core.mm */ /* include_juce_core.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_core.mm; path = ../../JuceLibraryCode/include_juce_core.mm; sourceTree = SOURCE_ROOT; };
 		5155AF6ED5DA3C6A497A7544 /* include_juce_graphics_Sheenbidi.c */ /* include_juce_graphics_Sheenbidi.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = include_juce_graphics_Sheenbidi.c; path = ../../JuceLibraryCode/include_juce_graphics_Sheenbidi.c; sourceTree = SOURCE_ROOT; };
 		54A4DD4565AFC7BB3ABDBA86 /* Main.cpp */ /* Main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Main.cpp; path = ../../Source/Main.cpp; sourceTree = SOURCE_ROOT; };
@@ -67,13 +66,12 @@
 		7366DD5272BB57029A9186FE /* IOKit.framework */ /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 		7829A1D1B629A675861037A7 /* include_juce_gui_basics.mm */ /* include_juce_gui_basics.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_gui_basics.mm; path = ../../JuceLibraryCode/include_juce_gui_basics.mm; sourceTree = SOURCE_ROOT; };
 		854CE1B97B35EBB6374AC856 /* json.hpp */ /* json.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = json.hpp; path = ../../Source/nlohmann/json.hpp; sourceTree = SOURCE_ROOT; };
+		8F0FBFCD8C9AA8FE2659992E /* insetLeft.svg */ /* insetLeft.svg */ = {isa = PBXFileReference; lastKnownFileType = file.svg; name = insetLeft.svg; path = ../../Source/melatonin/resources/insetLeft.svg; sourceTree = SOURCE_ROOT; };
 		8FD8DEEF1984AE27ACB16D74 /* QuartzCore.framework */ /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		93AA9795DFD81D7DBAFB803E /* juce_events */ /* juce_events */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_events; path = /Users/zilberstein/projects/JUCE/modules/juce_events; sourceTree = "<absolute>"; };
 		93F76B80E91AE9905B7021D8 /* BinaryData.h */ /* BinaryData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = BinaryData.h; path = ../../JuceLibraryCode/BinaryData.h; sourceTree = SOURCE_ROOT; };
-		94818BDE04B0AF26FC1B92C9 /* tackRight.svg */ /* tackRight.svg */ = {isa = PBXFileReference; lastKnownFileType = file.svg; name = tackRight.svg; path = ../../Source/melatonin/resources/tackRight.svg; sourceTree = SOURCE_ROOT; };
 		9605EC0C33F8C9192924CE0C /* juce_gui_basics */ /* juce_gui_basics */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_gui_basics; path = /Users/zilberstein/projects/JUCE/modules/juce_gui_basics; sourceTree = "<absolute>"; };
 		993EEA814BF16CAC888524A9 /* MainComponent.cpp */ /* MainComponent.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = MainComponent.cpp; path = ../../Source/MainComponent.cpp; sourceTree = SOURCE_ROOT; };
-		99AFFECB00AD3C6399A6748F /* tackBottom.svg */ /* tackBottom.svg */ = {isa = PBXFileReference; lastKnownFileType = file.svg; name = tackBottom.svg; path = ../../Source/melatonin/resources/tackBottom.svg; sourceTree = SOURCE_ROOT; };
 		9B3A7742C73042353F310BEB /* RecentFilesMenuTemplate.nib */ /* RecentFilesMenuTemplate.nib */ = {isa = PBXFileReference; lastKnownFileType = file.nib; name = RecentFilesMenuTemplate.nib; path = RecentFilesMenuTemplate.nib; sourceTree = SOURCE_ROOT; };
 		A50BB1C9E5AF9E9080092ABB /* MyComponentBuilder.hpp */ /* MyComponentBuilder.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MyComponentBuilder.hpp; path = ../../Source/melatonin/MyComponentBuilder.hpp; sourceTree = SOURCE_ROOT; };
 		A797AFFEC80EAA6F33BCA503 /* include_juce_data_structures.mm */ /* include_juce_data_structures.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_data_structures.mm; path = ../../JuceLibraryCode/include_juce_data_structures.mm; sourceTree = SOURCE_ROOT; };
@@ -89,8 +87,10 @@
 		DFCEE13EBBDF444506627BCE /* App */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1AD6F4F5536639D082D6BBB /* JuceHeader.h */ /* JuceHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = JuceHeader.h; path = ../../JuceLibraryCode/JuceHeader.h; sourceTree = SOURCE_ROOT; };
 		E3539C2A8B6FB0B5BDBB7DE8 /* juce_graphics */ /* juce_graphics */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_graphics; path = /Users/zilberstein/projects/JUCE/modules/juce_graphics; sourceTree = "<absolute>"; };
-		E3BA243DD707B6C90B642FB7 /* tackTop.svg */ /* tackTop.svg */ = {isa = PBXFileReference; lastKnownFileType = file.svg; name = tackTop.svg; path = ../../Source/melatonin/resources/tackTop.svg; sourceTree = SOURCE_ROOT; };
+		F4AFFACBC099FF282E1ABCD3 /* insetRight.svg */ /* insetRight.svg */ = {isa = PBXFileReference; lastKnownFileType = file.svg; name = insetRight.svg; path = ../../Source/melatonin/resources/insetRight.svg; sourceTree = SOURCE_ROOT; };
+		F9073FF126163ADB51CEA02E /* insetBottom.svg */ /* insetBottom.svg */ = {isa = PBXFileReference; lastKnownFileType = file.svg; name = insetBottom.svg; path = ../../Source/melatonin/resources/insetBottom.svg; sourceTree = SOURCE_ROOT; };
 		F9C75E0AFDE0092DA69614A3 /* Metal.framework */ /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
+		FA68BC956B40F16BCA91B038 /* insetTop.svg */ /* insetTop.svg */ = {isa = PBXFileReference; lastKnownFileType = file.svg; name = insetTop.svg; path = ../../Source/melatonin/resources/insetTop.svg; sourceTree = SOURCE_ROOT; };
 		FBB73F54127BB10BE2114EDD /* WebKit.framework */ /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		FEDA4ADFFFB779B002326817 /* MyRelativeCoordinatePositioner.hpp */ /* MyRelativeCoordinatePositioner.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MyRelativeCoordinatePositioner.hpp; path = ../../Source/melatonin/MyRelativeCoordinatePositioner.hpp; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -182,12 +182,12 @@
 			children = (
 				CE2F19200E8FE7D152B87E10,
 				9B3A7742C73042353F310BEB,
+				F9073FF126163ADB51CEA02E,
+				8F0FBFCD8C9AA8FE2659992E,
+				F4AFFACBC099FF282E1ABCD3,
+				FA68BC956B40F16BCA91B038,
 				CC68D34DC5E18F393DD43518,
 				15EF52A96BB0CD91151D2C77,
-				99AFFECB00AD3C6399A6748F,
-				4D3F1E2BAE842AED6CE0E02F,
-				94818BDE04B0AF26FC1B92C9,
-				E3BA243DD707B6C90B642FB7,
 				5C0CE05BBC051B85DB5B5559,
 				B09D7B39C82AE80308F8D80B,
 			);
@@ -318,12 +318,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				A06537A30C0D0CF441CEA658,
+				AAC981B3BE03C22EAF535CF7,
+				6EF7AFCBBBBE99D6DE87B40B,
+				3E5D7298F6E710B5FDE6CB3D,
+				1397490595E857E470581C32,
 				17C4DEE10E01AFDA738F803E,
 				313DEE2B980FE47323FB4285,
-				762FED7D97D8131B1B131905,
-				C70531475FCBF5A5ED78DC65,
-				DF040D2CD6488FD0D6228DF9,
-				5C0029D66B1E58986EADD935,
 				3747CF714809E51CDB6695EE,
 				0DAE26DAECF69CD2BC28ABC6,
 			);

@@ -21,6 +21,8 @@ public:
                                    Button::Listener *buttonListener = nullptr,
                                    Slider::Listener *sliderListener = nullptr,
                                    ChangeListener *changeListener = nullptr);
+private:
+    static Slider::SliderStyle sliderStyleValue( String styleStr );    
 };
 
 namespace melatonin {
