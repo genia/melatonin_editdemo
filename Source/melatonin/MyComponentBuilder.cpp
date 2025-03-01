@@ -10,10 +10,10 @@
 #include "melatonin_inspector/InsetRelativeCoordinatePositioner.hpp"
 #include "BinaryData.h"
 
+#define Q(str) #str
 Slider::SliderStyle
 MyComponentBuilder::sliderStyleValue( String styleStr )
 {
-#define Q(boo) #boo
 #define StyleVal( str ) if (styleStr == Q(str)) return juce::Slider::str;
     
     StyleVal(LinearHorizontal)               /**< A traditional horizontal slider. */
@@ -41,6 +41,36 @@ MyComponentBuilder::sliderStyleValue( String styleStr )
     StyleVal(ThreeValueVertical)
     return juce::Slider::LinearHorizontal;
 }
+String sliderStyleString( Slider::SliderStyle style )
+{
+#define StyleStr( sym ) if (style == juce::Slider::sym) return Q( sym );
+    
+    StyleStr(LinearHorizontal)               /**< A traditional horizontal slider. */
+    StyleStr(LinearVertical)                 /**< A traditional vertical slider. */
+    StyleStr(LinearBar)                      /**< A horizontal bar slider with the text label drawn on top of it. */
+    StyleStr(LinearBarVertical)              /**< A vertical bar slider with the text label drawn on top of it. */
+    StyleStr(Rotary)                         /**< A rotary control that you move by dragging the mouse in a circular motion, like a knob.
+                                         @see setRotaryParameters */
+    StyleStr(RotaryHorizontalDrag)           /**< A rotary control that you move by dragging the mouse left-to-right.
+                                         @see setRotaryParameters */
+    StyleStr(RotaryVerticalDrag)             /**< A rotary control that you move by dragging the mouse up-and-down.
+                                         @see setRotaryParameters */
+    StyleStr(RotaryHorizontalVerticalDrag)   /**< A rotary control that you move by dragging the mouse up-and-down or left-to-right.
+                                         @see setRotaryParameters */
+    StyleStr(IncDecButtons)                  /**< A pair of buttons that increment or decrement the slider's value by the increment set in setRange(). */
+
+    StyleStr(TwoValueHorizontal)             /**< A horizontal slider that has two thumbs instead of one, so it can show a minimum and maximum value.
+                                         @see setMinValue, setMaxValue */
+    StyleStr(TwoValueVertical)               /**< A vertical slider that has two thumbs instead of one, so it can show a minimum and maximum value.
+                                         @see setMinValue, setMaxValue */
+
+    StyleStr(ThreeValueHorizontal)           /**< A horizontal slider that has three thumbs instead of one, so it can show a minimum and maximum
+                                         value, with the current value being somewhere between them.
+                                         @see setMinValue, setMaxValue */
+    StyleStr(ThreeValueVertical)
+    return "";
+}
+
 
 Component *
 MyComponentBuilder::createComponentTree(ValueTree &vt,
@@ -307,37 +337,6 @@ String buttonText( Component *c )
     {
         return " buttonText=\"" + button->getButtonText() + "\"";
     }
-    return "";
-}
-
-String sliderStyleString( Slider::SliderStyle style )
-{
-#define Q(boo) #boo
-#define StyleStr( sym ) if (style == juce::Slider::sym) return Q( sym );
-    
-    StyleStr(LinearHorizontal)               /**< A traditional horizontal slider. */
-    StyleStr(LinearVertical)                 /**< A traditional vertical slider. */
-    StyleStr(LinearBar)                      /**< A horizontal bar slider with the text label drawn on top of it. */
-    StyleStr(LinearBarVertical)              /**< A vertical bar slider with the text label drawn on top of it. */
-    StyleStr(Rotary)                         /**< A rotary control that you move by dragging the mouse in a circular motion, like a knob.
-                                         @see setRotaryParameters */
-    StyleStr(RotaryHorizontalDrag)           /**< A rotary control that you move by dragging the mouse left-to-right.
-                                         @see setRotaryParameters */
-    StyleStr(RotaryVerticalDrag)             /**< A rotary control that you move by dragging the mouse up-and-down.
-                                         @see setRotaryParameters */
-    StyleStr(RotaryHorizontalVerticalDrag)   /**< A rotary control that you move by dragging the mouse up-and-down or left-to-right.
-                                         @see setRotaryParameters */
-    StyleStr(IncDecButtons)                  /**< A pair of buttons that increment or decrement the slider's value by the increment set in setRange(). */
-
-    StyleStr(TwoValueHorizontal)             /**< A horizontal slider that has two thumbs instead of one, so it can show a minimum and maximum value.
-                                         @see setMinValue, setMaxValue */
-    StyleStr(TwoValueVertical)               /**< A vertical slider that has two thumbs instead of one, so it can show a minimum and maximum value.
-                                         @see setMinValue, setMaxValue */
-
-    StyleStr(ThreeValueHorizontal)           /**< A horizontal slider that has three thumbs instead of one, so it can show a minimum and maximum
-                                         value, with the current value being somewhere between them.
-                                         @see setMinValue, setMaxValue */
-    StyleStr(ThreeValueVertical)
     return "";
 }
 
