@@ -7,7 +7,8 @@
 //
 
 #include "MyComponentBuilder.hpp"
-#include "MyRelativeCoordinatePositioner.hpp"
+#include "melatonin_inspector/InsetRelativeCoordinatePositioner.hpp"
+#include "BinaryData.h"
 
 Slider::SliderStyle
 MyComponentBuilder::sliderStyleValue( String styleStr )
@@ -86,18 +87,20 @@ MyComponentBuilder::createComponentTree(ValueTree &vt,
             b->setButtonText(vt.getProperty("buttonText"));
 
             String svgName( vt.getProperty("sourceFile") );
-            std::unique_ptr< Drawable > drawable = Drawable::createFromSVGFile(File( File::getSpecialLocation (File::currentApplicationFile)
-                       .getChildFile ("Contents")
-                       .getChildFile ("Resources")
-                       .getChildFile (svgName) ));
+            
+            int size = 0;
+            String rsrcName = svgName.replace(".", "_");
+            auto data = BinaryData::getNamedResource (rsrcName.toUTF8(), size);
+            std::unique_ptr< Drawable > drawable = Drawable::createFromImageData(data, size);
             Colour origColour( 0xff5f6368 );
+            Colour newColour( Colours::lightgrey );
             drawable->setName( svgName );
             std::unique_ptr< Drawable > one = drawable->createCopy();
-            one->replaceColour(origColour, Colours::lightgrey);
+            one->replaceColour(origColour, newColour);
             std::unique_ptr< Drawable > two = drawable->createCopy();
-            two->replaceColour(origColour, Colours::lightgrey.darker());
+            two->replaceColour(origColour, newColour.darker());
             std::unique_ptr< Drawable > three = drawable->createCopy();
-            three->replaceColour(origColour, Colours::lightgrey.darker(.4*2));
+            three->replaceColour(origColour, newColour.darker(.8));
             
             b->setImages(one.get(), two.get(), three.get() );
 
@@ -167,7 +170,7 @@ MyComponentBuilder::createComponentTree(ValueTree &vt,
         c->setBounds(vt.getProperty("x"), vt.getProperty("y"),
                      vt.getProperty("width"), vt.getProperty("height"));
                 
-        MyRelativeCoordinatePositioner *mrp = MyRelativeCoordinatePositioner::makeForComponent( *c );
+        melatonin::InsetRelativeCoordinatePositioner *mrp = melatonin::InsetRelativeCoordinatePositioner::makeForComponent( *c );
         String styleStr = vt.getProperty("style");
         StringArray styleSpecs = StringArray::fromTokens(styleStr, ";", "");
         for (String spec : styleSpecs)
@@ -197,151 +200,6 @@ MyComponentBuilder::createComponentTree(ValueTree &vt,
 
 namespace melatonin
 {
-void BoxModel::handleAlignButtonStateChange( juce::Label &label, const Identifier &property, bool state )
-{
-    Component *component = model.getSelectedComponent();
-    if (component == nullptr)
-        return;
-    MyRelativeCoordinatePositioner *mrp = dynamic_cast<MyRelativeCoordinatePositioner*>( component->getPositioner() );
-    if (mrp == nullptr)
-        return;
-
-    mrp->params[property] = state;
-}
-
-void
-BoxModel::initButton( juce::DrawableButton &button, juce::Label &label, const Identifier &property, const std::string &svgFile )
-{
-    std::unique_ptr< Drawable > drawable = Drawable::createFromSVGFile(File( File::getSpecialLocation (File::currentApplicationFile)
-                                                                            .getChildFile ("Contents")
-                                                                            .getChildFile ("Resources")
-                                                                            .getChildFile (svgFile) ));
-    Colour origColour( 0xff5f6368 );
-    std::unique_ptr< Drawable > one = drawable->createCopy();
-    one->replaceColour(origColour, Colours::lightgrey);
-    std::unique_ptr< Drawable > two = drawable->createCopy();
-    two->replaceColour(origColour, Colours::dimgrey);
-    std::unique_ptr< Drawable > three = drawable->createCopy();
-    three->replaceColour(origColour, Colours::darkgrey);
-    
-    std::unique_ptr< Drawable > oneOn = drawable->createCopy();
-    oneOn->replaceColour(origColour, Colours::red);
-    std::unique_ptr< Drawable > twoOn = drawable->createCopy();
-    twoOn->replaceColour(origColour, Colours::red.darker());
-    std::unique_ptr< Drawable > threeOn = drawable->createCopy();
-    threeOn->replaceColour(origColour, Colours::red.darker(.4*2));
-    
-    auto buttonSize = 20;
-    button.setSize(buttonSize, buttonSize);
-    button.setToggleable( true );
-    button.setClickingTogglesState( true );
-    button.setImages(one.get(), two.get(), three.get(), nullptr,
-                     oneOn.get(), twoOn.get(), threeOn.get(), nullptr );
-    
-    button.onClick = [this, property, &label, &button] {
-        bool state = button.getToggleState();
-        this->handleAlignButtonStateChange( label, property, state );
-    };
-    
-}
-
-void BoxModel::moreLayout()
-{
-    const std::array<std::tuple<juce::DrawableButton &, juce::Label &, Identifier, std::string>, 4> buttonDescArray = {{
-        {insetTopButton, topInsetLabel, "topInsetEnabled", "insetTop.svg", },
-        {insetRightButton, rightInsetLabel, "rightInsetEnabled", "insetRight.svg" },
-        {insetBottomButton, bottomInsetLabel, "bottomInsetEnabled", "insetBottom.svg", },
-        {insetLeftButton, topInsetLabel, "leftInsetEnabled", "insetLeft.svg"}
-    }};
-
-    for (auto [ button, label, property, filename ] : buttonDescArray)
-    {
-        initButton( button, label, property, filename );
-        addAndMakeVisible( button );
-    }
-}
-
-void BoxModel::resized()
-{
-    auto bounds = parentComponentRectangle();
-    auto center = bounds.getCentre();
-    auto labelHeight = 30;
-    auto buttonDistance = 20;
-    
-    parentComponentLabel.setBounds (bounds.getX(), bounds.getY() - labelHeight + 4, bounds.getWidth(), labelHeight);
-    componentLabel.setBounds (componentRectangle().getX(), componentRectangle().getY() - labelHeight + 4, componentRectangle().getWidth(), labelHeight);
-    
-    widthLabel.setBounds (center.getX() - 10 - paddingToParent, center.getY() - 15, paddingToParent, labelHeight);
-    byLabel.setBounds (center.getX() - 10, center.getY() - 15, 20, labelHeight);
-    heightLabel.setBounds (center.getX() + 10, center.getY() - 15, paddingToParent, labelHeight);
-    
-    topInsetLabel.setBounds (center.getX() - paddingToParent / 2, padding + paddingToParent / 2 - labelHeight / 2 - 3, paddingToParent, labelHeight);
-    insetTopButton.setTopLeftPosition(topInsetLabel.getX()-buttonDistance, topInsetLabel.getY() + topInsetLabel.getHeight()/4);
-    
-    rightInsetLabel.setBounds (getWidth() - padding - paddingToParent / 2 - paddingToParent / 2, center.getY() - labelHeight / 2, paddingToParent, labelHeight);
-    insetRightButton.setTopLeftPosition(rightInsetLabel.getX() + (rightInsetLabel.getWidth() - insetRightButton.getWidth())/2, rightInsetLabel.getY() - buttonDistance);
-    
-    bottomInsetLabel.setBounds (center.getX() - paddingToParent / 2, getHeight() - padding - paddingToParent / 2 - labelHeight / 2 + 3, paddingToParent, labelHeight);
-    insetBottomButton.setTopLeftPosition(bottomInsetLabel.getX()-buttonDistance, bottomInsetLabel.getY() + bottomInsetLabel.getHeight()/4);
-    
-    leftInsetLabel.setBounds (padding + paddingToParent / 2 - paddingToParent / 2, center.getY() - labelHeight / 2, paddingToParent, labelHeight);
-    insetLeftButton.setTopLeftPosition(leftInsetLabel.getX() + (leftInsetLabel.getWidth() - insetLeftButton.getWidth())/2, leftInsetLabel.getY() - buttonDistance);
-    
-    auto area1 = bounds.reduced (paddingToParent)
-        .removeFromTop (padding)
-        .withSizeKeepingCentre (padding, padding);
-    paddingTopLabel.setBounds (area1);
-    
-    auto area2 = bounds.reduced (paddingToParent)
-        .removeFromBottom (padding)
-        .withSizeKeepingCentre (padding, padding);
-    paddingBottomLabel.setBounds (area2);
-    
-    auto area3 = bounds.reduced (paddingToParent)
-        .removeFromLeft (padding)
-        .withSizeKeepingCentre (padding, padding);
-    paddingLeftLabel.setBounds (area3);
-    
-    auto area4 = bounds.reduced (paddingToParent)
-        .removeFromRight (padding)
-        .withTrimmedTop (padding)
-        .withTrimmedBottom (padding)
-        .withSizeKeepingCentre (padding, padding);
-    paddingRightLabel.setBounds (area4);
-}
-
-void BoxModel::componentModelChanged (ComponentModel&)
-{
-    updateLabels();
-    updatePaddingLabelsIfNeeded();
-    
-    Component *comp = model.getSelectedComponent();
-    if (comp == nullptr)
-        return;
-    MyRelativeCoordinatePositioner *mrp = dynamic_cast<MyRelativeCoordinatePositioner*>( comp->getPositioner() );
-    if (mrp != nullptr)
-    {
-        insetRightButton.setEnabled(true);
-        insetRightButton.setToggleState(mrp->params["rightInsetEnabled"].getValue(), juce::dontSendNotification);
-        insetLeftButton.setEnabled(true);
-        insetLeftButton.setToggleState(mrp->params["leftInsetEnabled"].getValue(), juce::dontSendNotification);
-        insetTopButton.setEnabled(true);
-        insetTopButton.setToggleState(mrp->params["topInsetEnabled"].getValue(), juce::dontSendNotification);
-        insetBottomButton.setEnabled(true);
-        insetBottomButton.setToggleState(mrp->params["bottomInsetEnabled"].getValue(), juce::dontSendNotification);
-    }
-    else
-    {
-        insetRightButton.setEnabled(false);
-        insetRightButton.setToggleState(false, juce::dontSendNotification);
-        insetLeftButton.setEnabled(false);
-        insetLeftButton.setToggleState(false, juce::dontSendNotification);
-        insetTopButton.setEnabled(false);
-        insetTopButton.setToggleState(false, juce::dontSendNotification);
-        insetBottomButton.setEnabled(false);
-        insetBottomButton.setToggleState(false, juce::dontSendNotification);
-    }
-}
 
 void InspectorComponent::deleteComponent()
 {
@@ -495,7 +353,7 @@ ValueTree walkComponent( Component *c )
             { "height", c->getHeight() },
         } };    
 
-    MyRelativeCoordinatePositioner *mrp = dynamic_cast<MyRelativeCoordinatePositioner*>( c->getPositioner() );
+    melatonin::InsetRelativeCoordinatePositioner *mrp = dynamic_cast<melatonin::InsetRelativeCoordinatePositioner*>( c->getPositioner() );
     if (mrp != nullptr)
     {
         String styleStr;

@@ -12,18 +12,11 @@
 		0EFF6765972953ED7CEEC862 /* Main.cpp */ = {isa = PBXBuildFile; fileRef = 54A4DD4565AFC7BB3ABDBA86; };
 		0F1CC56F839FD3EBDA5622EB /* include_juce_core.mm */ = {isa = PBXBuildFile; fileRef = 50658F7D9B4F411C6497AF3F; };
 		11184990744676397549C897 /* Metal.framework */ = {isa = PBXBuildFile; fileRef = F9C75E0AFDE0092DA69614A3; settings = { ATTRIBUTES = (Weak, ); }; };
-		1397490595E857E470581C32 /* insetTop.svg */ = {isa = PBXBuildFile; fileRef = FA68BC956B40F16BCA91B038; };
 		1724542A8441DB90A86E58B9 /* BinaryData.cpp */ = {isa = PBXBuildFile; fileRef = 57D01CBFFE2DD87792D2FC33; };
-		17C4DEE10E01AFDA738F803E /* delete.svg */ = {isa = PBXBuildFile; fileRef = CC68D34DC5E18F393DD43518; };
 		18C2247CD9825F20057E6FF2 /* MetalKit.framework */ = {isa = PBXBuildFile; fileRef = BBB8FAB97D2FB4D8FCDBBC7C; settings = { ATTRIBUTES = (Weak, ); }; };
 		275EDA159E7033C794DBCCBB /* include_juce_graphics_Harfbuzz.cpp */ = {isa = PBXBuildFile; fileRef = 36FB2B9687C2EBA1A44D9AEE; };
-		313DEE2B980FE47323FB4285 /* download.svg */ = {isa = PBXBuildFile; fileRef = 15EF52A96BB0CD91151D2C77; };
-		3747CF714809E51CDB6695EE /* widgets.svg */ = {isa = PBXBuildFile; fileRef = 5C0CE05BBC051B85DB5B5559; };
 		3C635FBBD4B4BCAB451A5F80 /* IOKit.framework */ = {isa = PBXBuildFile; fileRef = 7366DD5272BB57029A9186FE; };
 		3D9D25B4DCAD168DEC83B6B0 /* Cocoa.framework */ = {isa = PBXBuildFile; fileRef = 3341671124AC7714F99BCBBC; };
-		3E5D7298F6E710B5FDE6CB3D /* insetRight.svg */ = {isa = PBXBuildFile; fileRef = F4AFFACBC099FF282E1ABCD3; };
-		600B1F230A284FE47FEF8EE8 /* MyRelativeCoordinatePositioner.cpp */ = {isa = PBXBuildFile; fileRef = 10B1860B2BEEAA2B7789A853; };
-		6EF7AFCBBBBE99D6DE87B40B /* insetLeft.svg */ = {isa = PBXBuildFile; fileRef = 8F0FBFCD8C9AA8FE2659992E; };
 		6FFD8F3C5D189306DCFFE626 /* include_juce_graphics.mm */ = {isa = PBXBuildFile; fileRef = 7019660A8E5D5077F88C38EB; };
 		76544CFE389B297562FAAD1F /* include_juce_events.mm */ = {isa = PBXBuildFile; fileRef = 3EB4AB8626E694E7B9B2994D; };
 		799329291651632D25128454 /* MainComponent.cpp */ = {isa = PBXBuildFile; fileRef = 993EEA814BF16CAC888524A9; };
@@ -31,7 +24,6 @@
 		8C273B7D2D775660A9E489A5 /* PJNotifier.cpp */ = {isa = PBXBuildFile; fileRef = BF46ABF78578C4AA2DF3D0BF; };
 		9E83AB1C0794F4205BA930A0 /* MyComponentBuilder.cpp */ = {isa = PBXBuildFile; fileRef = 43D22CA898541A4A984B6026; };
 		A06537A30C0D0CF441CEA658 /* RecentFilesMenuTemplate.nib */ = {isa = PBXBuildFile; fileRef = 9B3A7742C73042353F310BEB; };
-		AAC981B3BE03C22EAF535CF7 /* insetBottom.svg */ = {isa = PBXBuildFile; fileRef = F9073FF126163ADB51CEA02E; };
 		BCA4DBF9EFCBC353C3F8BAA9 /* include_juce_data_structures.mm */ = {isa = PBXBuildFile; fileRef = A797AFFEC80EAA6F33BCA503; };
 		BDAF3BFF38CD5C748A46A61E /* Security.framework */ = {isa = PBXBuildFile; fileRef = 455AB18848EF073D529979B2; };
 		C9FC99C6CB2AE7781BB2383D /* include_juce_gui_extra.mm */ = {isa = PBXBuildFile; fileRef = 4C7CD8B417CC44D0DB3B06A7; };
@@ -45,8 +37,6 @@
 
 /* Begin PBXFileReference section */
 		069CEFBB5AE442984CD5AC40 /* juce_data_structures */ /* juce_data_structures */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_data_structures; path = /Users/zilberstein/projects/JUCE/modules/juce_data_structures; sourceTree = "<absolute>"; };
-		10B1860B2BEEAA2B7789A853 /* MyRelativeCoordinatePositioner.cpp */ /* MyRelativeCoordinatePositioner.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = MyRelativeCoordinatePositioner.cpp; path = ../../Source/melatonin/MyRelativeCoordinatePositioner.cpp; sourceTree = SOURCE_ROOT; };
-		15EF52A96BB0CD91151D2C77 /* download.svg */ /* download.svg */ = {isa = PBXFileReference; lastKnownFileType = file.svg; name = download.svg; path = ../../Source/melatonin/resources/download.svg; sourceTree = SOURCE_ROOT; };
 		1D4E98D9D529159063DE88A4 /* juce_gui_extra */ /* juce_gui_extra */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_gui_extra; path = /Users/zilberstein/projects/JUCE/modules/juce_gui_extra; sourceTree = "<absolute>"; };
 		1DE0797B7588100C5704E44D /* melatonin_inspector */ /* melatonin_inspector */ = {isa = PBXFileReference; lastKnownFileType = folder; name = melatonin_inspector; path = ../../modules/melatonin_inspector; sourceTree = SOURCE_ROOT; };
 		3341671124AC7714F99BCBBC /* Cocoa.framework */ /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -60,13 +50,11 @@
 		5155AF6ED5DA3C6A497A7544 /* include_juce_graphics_Sheenbidi.c */ /* include_juce_graphics_Sheenbidi.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = include_juce_graphics_Sheenbidi.c; path = ../../JuceLibraryCode/include_juce_graphics_Sheenbidi.c; sourceTree = SOURCE_ROOT; };
 		54A4DD4565AFC7BB3ABDBA86 /* Main.cpp */ /* Main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Main.cpp; path = ../../Source/Main.cpp; sourceTree = SOURCE_ROOT; };
 		57D01CBFFE2DD87792D2FC33 /* BinaryData.cpp */ /* BinaryData.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = BinaryData.cpp; path = ../../JuceLibraryCode/BinaryData.cpp; sourceTree = SOURCE_ROOT; };
-		5C0CE05BBC051B85DB5B5559 /* widgets.svg */ /* widgets.svg */ = {isa = PBXFileReference; lastKnownFileType = file.svg; name = widgets.svg; path = ../../Source/melatonin/resources/widgets.svg; sourceTree = SOURCE_ROOT; };
 		5F0F366F448757E52A46AE9B /* juce_core */ /* juce_core */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_core; path = /Users/zilberstein/projects/JUCE/modules/juce_core; sourceTree = "<absolute>"; };
 		7019660A8E5D5077F88C38EB /* include_juce_graphics.mm */ /* include_juce_graphics.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_graphics.mm; path = ../../JuceLibraryCode/include_juce_graphics.mm; sourceTree = SOURCE_ROOT; };
 		7366DD5272BB57029A9186FE /* IOKit.framework */ /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 		7829A1D1B629A675861037A7 /* include_juce_gui_basics.mm */ /* include_juce_gui_basics.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_gui_basics.mm; path = ../../JuceLibraryCode/include_juce_gui_basics.mm; sourceTree = SOURCE_ROOT; };
 		854CE1B97B35EBB6374AC856 /* json.hpp */ /* json.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = json.hpp; path = ../../Source/nlohmann/json.hpp; sourceTree = SOURCE_ROOT; };
-		8F0FBFCD8C9AA8FE2659992E /* insetLeft.svg */ /* insetLeft.svg */ = {isa = PBXFileReference; lastKnownFileType = file.svg; name = insetLeft.svg; path = ../../Source/melatonin/resources/insetLeft.svg; sourceTree = SOURCE_ROOT; };
 		8FD8DEEF1984AE27ACB16D74 /* QuartzCore.framework */ /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		93AA9795DFD81D7DBAFB803E /* juce_events */ /* juce_events */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_events; path = /Users/zilberstein/projects/JUCE/modules/juce_events; sourceTree = "<absolute>"; };
 		93F76B80E91AE9905B7021D8 /* BinaryData.h */ /* BinaryData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = BinaryData.h; path = ../../JuceLibraryCode/BinaryData.h; sourceTree = SOURCE_ROOT; };
@@ -80,19 +68,14 @@
 		BF46ABF78578C4AA2DF3D0BF /* PJNotifier.cpp */ /* PJNotifier.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = PJNotifier.cpp; path = ../../Source/PJNotifier.cpp; sourceTree = SOURCE_ROOT; };
 		C837340E8683006B542C495D /* MainComponent.h */ /* MainComponent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MainComponent.h; path = ../../Source/MainComponent.h; sourceTree = SOURCE_ROOT; };
 		CB8D7ABB89098CAE2B39DA6F /* include_melatonin_inspector.cpp */ /* include_melatonin_inspector.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = include_melatonin_inspector.cpp; path = ../../JuceLibraryCode/include_melatonin_inspector.cpp; sourceTree = SOURCE_ROOT; };
-		CC68D34DC5E18F393DD43518 /* delete.svg */ /* delete.svg */ = {isa = PBXFileReference; lastKnownFileType = file.svg; name = delete.svg; path = ../../Source/melatonin/resources/delete.svg; sourceTree = SOURCE_ROOT; };
 		CE2F19200E8FE7D152B87E10 /* Info-App.plist */ /* Info-App.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info-App.plist"; path = "Info-App.plist"; sourceTree = SOURCE_ROOT; };
 		D3E174E549DDC00C32725BF7 /* include_juce_core_CompilationTime.cpp */ /* include_juce_core_CompilationTime.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = include_juce_core_CompilationTime.cpp; path = ../../JuceLibraryCode/include_juce_core_CompilationTime.cpp; sourceTree = SOURCE_ROOT; };
 		D7DBAFBC2C85EA88E6B2B317 /* PJNotifier.hpp */ /* PJNotifier.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PJNotifier.hpp; path = ../../Source/PJNotifier.hpp; sourceTree = SOURCE_ROOT; };
 		DFCEE13EBBDF444506627BCE /* App */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1AD6F4F5536639D082D6BBB /* JuceHeader.h */ /* JuceHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = JuceHeader.h; path = ../../JuceLibraryCode/JuceHeader.h; sourceTree = SOURCE_ROOT; };
 		E3539C2A8B6FB0B5BDBB7DE8 /* juce_graphics */ /* juce_graphics */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_graphics; path = /Users/zilberstein/projects/JUCE/modules/juce_graphics; sourceTree = "<absolute>"; };
-		F4AFFACBC099FF282E1ABCD3 /* insetRight.svg */ /* insetRight.svg */ = {isa = PBXFileReference; lastKnownFileType = file.svg; name = insetRight.svg; path = ../../Source/melatonin/resources/insetRight.svg; sourceTree = SOURCE_ROOT; };
-		F9073FF126163ADB51CEA02E /* insetBottom.svg */ /* insetBottom.svg */ = {isa = PBXFileReference; lastKnownFileType = file.svg; name = insetBottom.svg; path = ../../Source/melatonin/resources/insetBottom.svg; sourceTree = SOURCE_ROOT; };
 		F9C75E0AFDE0092DA69614A3 /* Metal.framework */ /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
-		FA68BC956B40F16BCA91B038 /* insetTop.svg */ /* insetTop.svg */ = {isa = PBXFileReference; lastKnownFileType = file.svg; name = insetTop.svg; path = ../../Source/melatonin/resources/insetTop.svg; sourceTree = SOURCE_ROOT; };
 		FBB73F54127BB10BE2114EDD /* WebKit.framework */ /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
-		FEDA4ADFFFB779B002326817 /* MyRelativeCoordinatePositioner.hpp */ /* MyRelativeCoordinatePositioner.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MyRelativeCoordinatePositioner.hpp; path = ../../Source/melatonin/MyRelativeCoordinatePositioner.hpp; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,13 +165,6 @@
 			children = (
 				CE2F19200E8FE7D152B87E10,
 				9B3A7742C73042353F310BEB,
-				F9073FF126163ADB51CEA02E,
-				8F0FBFCD8C9AA8FE2659992E,
-				F4AFFACBC099FF282E1ABCD3,
-				FA68BC956B40F16BCA91B038,
-				CC68D34DC5E18F393DD43518,
-				15EF52A96BB0CD91151D2C77,
-				5C0CE05BBC051B85DB5B5559,
 				B09D7B39C82AE80308F8D80B,
 			);
 			name = Resources;
@@ -199,8 +175,6 @@
 			children = (
 				43D22CA898541A4A984B6026,
 				A50BB1C9E5AF9E9080092ABB,
-				10B1860B2BEEAA2B7789A853,
-				FEDA4ADFFFB779B002326817,
 			);
 			name = melatonin;
 			sourceTree = "<group>";
@@ -318,13 +292,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A06537A30C0D0CF441CEA658,
-				AAC981B3BE03C22EAF535CF7,
-				6EF7AFCBBBBE99D6DE87B40B,
-				3E5D7298F6E710B5FDE6CB3D,
-				1397490595E857E470581C32,
-				17C4DEE10E01AFDA738F803E,
-				313DEE2B980FE47323FB4285,
-				3747CF714809E51CDB6695EE,
 				0DAE26DAECF69CD2BC28ABC6,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -337,7 +304,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9E83AB1C0794F4205BA930A0,
-				600B1F230A284FE47FEF8EE8,
 				8C273B7D2D775660A9E489A5,
 				0EFF6765972953ED7CEEC862,
 				799329291651632D25128454,

@@ -142,7 +142,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Source\melatonin\MyComponentBuilder.cpp"/>
-    <ClCompile Include="..\..\Source\melatonin\MyRelativeCoordinatePositioner.cpp"/>
     <ClCompile Include="..\..\Source\PJNotifier.cpp"/>
     <ClCompile Include="..\..\Source\Main.cpp"/>
     <ClCompile Include="..\..\Source\MainComponent.cpp"/>
@@ -1918,7 +1917,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Source\melatonin\MyComponentBuilder.hpp"/>
-    <ClInclude Include="..\..\Source\melatonin\MyRelativeCoordinatePositioner.hpp"/>
     <ClInclude Include="..\..\Source\nlohmann\json.hpp"/>
     <ClInclude Include="..\..\Source\PJNotifier.hpp"/>
     <ClInclude Include="..\..\Source\MainComponent.h"/>
@@ -2761,6 +2759,7 @@
     <ClInclude Include="..\..\modules\melatonin_inspector\melatonin\component_model.h"/>
     <ClInclude Include="..\..\modules\melatonin_inspector\melatonin\inspector_component.h"/>
     <ClInclude Include="..\..\modules\melatonin_inspector\melatonin\lookandfeel.h"/>
+    <ClInclude Include="..\..\modules\melatonin_inspector\InsetRelativeCoordinatePositioner.hpp"/>
     <ClInclude Include="..\..\modules\melatonin_inspector\melatonin_inspector.h"/>
     <ClInclude Include="..\..\JuceLibraryCode\BinaryData.h"/>
     <ClInclude Include="..\..\JuceLibraryCode\JuceHeader.h"/>

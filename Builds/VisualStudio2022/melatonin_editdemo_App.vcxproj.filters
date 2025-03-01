@@ -334,9 +334,6 @@
     <ClCompile Include="..\..\Source\melatonin\MyComponentBuilder.cpp">
       <Filter>melatonin_editdemo\melatonin</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\melatonin\MyRelativeCoordinatePositioner.cpp">
-      <Filter>melatonin_editdemo\melatonin</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\Source\PJNotifier.cpp">
       <Filter>melatonin_editdemo\Source</Filter>
     </ClCompile>
@@ -2242,9 +2239,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Source\melatonin\MyComponentBuilder.hpp">
-      <Filter>melatonin_editdemo\melatonin</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\melatonin\MyRelativeCoordinatePositioner.hpp">
       <Filter>melatonin_editdemo\melatonin</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\nlohmann\json.hpp">
@@ -4772,6 +4766,9 @@
     </ClInclude>
     <ClInclude Include="..\..\modules\melatonin_inspector\melatonin\lookandfeel.h">
       <Filter>JUCE Modules\melatonin_inspector\melatonin</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\modules\melatonin_inspector\InsetRelativeCoordinatePositioner.hpp">
+      <Filter>JUCE Modules\melatonin_inspector</Filter>
     </ClInclude>
     <ClInclude Include="..\..\modules\melatonin_inspector\melatonin_inspector.h">
       <Filter>JUCE Modules\melatonin_inspector</Filter>

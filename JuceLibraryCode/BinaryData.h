@@ -8,32 +8,11 @@
 
 namespace BinaryData
 {
-    extern const char*   insetBottom_svg;
-    const int            insetBottom_svgSize = 214;
-
-    extern const char*   insetLeft_svg;
-    const int            insetLeft_svgSize = 211;
-
-    extern const char*   insetRight_svg;
-    const int            insetRight_svgSize = 213;
-
-    extern const char*   insetTop_svg;
-    const int            insetTop_svgSize = 216;
-
-    extern const char*   delete_svg;
-    const int            delete_svgSize = 507;
-
-    extern const char*   download_svg;
-    const int            download_svgSize = 245;
-
-    extern const char*   widgets_svg;
-    const int            widgets_svgSize = 392;
-
     extern const char*   ComponentTemplates_xml;
     const int            ComponentTemplates_xmlSize = 1324;
 
     // Number of elements in the namedResourceList and originalFileNames arrays.
-    const int namedResourceListSize = 8;
+    const int namedResourceListSize = 1;
 
     // Points to the start of a list of resource names.
     extern const char* namedResourceList[];
