@@ -114,7 +114,7 @@ MyComponentBuilder::createComponentTree(ValueTree &vt,
             c = new juce::Slider();
             Slider *s = (Slider *)c;
             s->setRange (vt.getProperty("min"), vt.getProperty("max"), vt.getProperty("int"));
-            s->setSliderStyle (sliderStyleValue(vt.getProperty("slider")));
+            s->setSliderStyle (sliderStyleValue(vt.getProperty("style")));
             s->setTextBoxStyle (juce::Slider::NoTextBox, true, 80, 20);
             if (sliderListener != nullptr)
             {
@@ -358,10 +358,10 @@ ValueTree walkComponent( Component *c )
     {
         String styleStr;
         const std::array<Identifier, 4> paramNames = {
-            "leftToParent",
-            "rightToParent",
-            "topToParent",
-            "bottomToParent",
+            "leftInset",
+            "rightInset",
+            "topInset",
+            "bottomInset",
         };
         for (auto paramName : paramNames)
         {
