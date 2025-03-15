@@ -8,20 +8,24 @@ using namespace juce;
 MainComponent::MainComponent()
 {
     setSize (600, 400);
-    
     String typeStr( melatonin::type ( *this ) );
+    String xmlFilename( typeStr + ".xml" );
     auto xmlFilePath = File::getSpecialLocation (File::userDesktopDirectory)
-        .getChildFile (typeStr + ".xml");
+        .getChildFile (xmlFilename);
     File xmlFile( xmlFilePath );
-    if (!xmlFile.existsAsFile())
+    String componentXML;
+    if (xmlFile.existsAsFile())
     {
-        xmlFilePath = File::getSpecialLocation (File::currentApplicationFile)
-            .getChildFile ("Contents")
-            .getChildFile ("Resources")
-            .getChildFile (typeStr + ".xml");
-        xmlFile = xmlFilePath;
+        componentXML = xmlFile.loadFileAsString();
     }
-    String componentXML = xmlFile.loadFileAsString();
+    else
+    {
+        int size = 0;
+        String rsrcName = xmlFilename.replace(".", "_");
+        const char *data = BinaryData::getNamedResource (rsrcName.toUTF8(), size);
+        componentXML = data;
+    }
+
     ValueTree valueTree = ValueTree::fromXml(componentXML);
     MyComponentBuilder cb;
     /*Component *comp = */cb.createComponentTree(valueTree, this, this, this, this);

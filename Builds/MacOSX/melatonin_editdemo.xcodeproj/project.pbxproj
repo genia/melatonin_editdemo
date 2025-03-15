@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0D0510EEF8CB6CCC30FC9AB1 /* Foundation.framework */ = {isa = PBXBuildFile; fileRef = 3AC1D5CF698909980E1D85D1; };
-		0DAE26DAECF69CD2BC28ABC6 /* ComponentTemplates.xml */ = {isa = PBXBuildFile; fileRef = B09D7B39C82AE80308F8D80B; };
 		0EFF6765972953ED7CEEC862 /* Main.cpp */ = {isa = PBXBuildFile; fileRef = 54A4DD4565AFC7BB3ABDBA86; };
 		0F1CC56F839FD3EBDA5622EB /* include_juce_core.mm */ = {isa = PBXBuildFile; fileRef = 50658F7D9B4F411C6497AF3F; };
 		11184990744676397549C897 /* Metal.framework */ = {isa = PBXBuildFile; fileRef = F9C75E0AFDE0092DA69614A3; settings = { ATTRIBUTES = (Weak, ); }; };
@@ -36,6 +35,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		05FE2F4E02ECDCB957546C34 /* MainComponent.xml */ /* MainComponent.xml */ = {isa = PBXFileReference; lastKnownFileType = file.xml; name = MainComponent.xml; path = ../../Source/MainComponent.xml; sourceTree = SOURCE_ROOT; };
 		069CEFBB5AE442984CD5AC40 /* juce_data_structures */ /* juce_data_structures */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_data_structures; path = /Users/zilberstein/projects/JUCE/modules/juce_data_structures; sourceTree = "<absolute>"; };
 		1D4E98D9D529159063DE88A4 /* juce_gui_extra */ /* juce_gui_extra */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_gui_extra; path = /Users/zilberstein/projects/JUCE/modules/juce_gui_extra; sourceTree = "<absolute>"; };
 		1DE0797B7588100C5704E44D /* melatonin_inspector */ /* melatonin_inspector */ = {isa = PBXFileReference; lastKnownFileType = folder; name = melatonin_inspector; path = ../../modules/melatonin_inspector; sourceTree = SOURCE_ROOT; };
@@ -165,7 +165,6 @@
 			children = (
 				CE2F19200E8FE7D152B87E10,
 				9B3A7742C73042353F310BEB,
-				B09D7B39C82AE80308F8D80B,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -212,6 +211,8 @@
 			children = (
 				880F96A2B31ECF32273C69BD,
 				61C28B34BDC41D1A14C5D41D,
+				B09D7B39C82AE80308F8D80B,
+				05FE2F4E02ECDCB957546C34,
 			);
 			name = melatonin_editdemo;
 			sourceTree = "<group>";
@@ -292,7 +293,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A06537A30C0D0CF441CEA658,
-				0DAE26DAECF69CD2BC28ABC6,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

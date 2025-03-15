@@ -279,12 +279,11 @@ void InspectorComponent::addComponent()
         return;
     }
     
-    auto xmlFilePath { File::getSpecialLocation (File::currentApplicationFile)
-            .getChildFile ("Contents")
-            .getChildFile ("Resources")
-        .getChildFile ("ComponentTemplates.xml") };
-    File xmlFile( xmlFilePath );
-    String componentTemplateXML = xmlFile.loadFileAsString();
+    String xmlFilename( "ComponentTemplates.xml" );
+    int size = 0;
+    String rsrcName = xmlFilename.replace(".", "_");
+    const char *data = BinaryData::getNamedResource (rsrcName.toUTF8(), size);
+    String componentTemplateXML = data;
     ValueTree valueTree = ValueTree::fromXml(componentTemplateXML);
     PopupMenu m;
     for (auto child : valueTree) {

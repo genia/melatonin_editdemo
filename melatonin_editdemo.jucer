@@ -21,7 +21,9 @@
             file="Source/MainComponent.cpp"/>
     </GROUP>
     <FILE id="vc280M" name="ComponentTemplates.xml" compile="0" resource="1"
-          file="Source/ComponentTemplates.xml" xcodeResource="1"/>
+          file="Source/ComponentTemplates.xml" xcodeResource="0"/>
+    <FILE id="MG4aaE" name="MainComponent.xml" compile="0" resource="1"
+          file="Source/MainComponent.xml" xcodeResource="0"/>
   </MAINGROUP>
   <MODULES>
     <MODULE id="juce_core" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>

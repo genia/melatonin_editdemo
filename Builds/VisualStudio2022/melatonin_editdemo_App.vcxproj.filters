@@ -4781,6 +4781,12 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\..\Source\ComponentTemplates.xml">
+      <Filter>melatonin_editdemo</Filter>
+    </None>
+    <None Include="..\..\Source\MainComponent.xml">
+      <Filter>melatonin_editdemo</Filter>
+    </None>
     <None Include="C:\JUCE\modules\juce_core\native\java\README.txt">
       <Filter>JUCE Modules\juce_core\native\java</Filter>
     </None>

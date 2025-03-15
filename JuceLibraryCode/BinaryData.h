@@ -11,8 +11,11 @@ namespace BinaryData
     extern const char*   ComponentTemplates_xml;
     const int            ComponentTemplates_xmlSize = 1324;
 
+    extern const char*   MainComponent_xml;
+    const int            MainComponent_xmlSize = 1529;
+
     // Number of elements in the namedResourceList and originalFileNames arrays.
-    const int namedResourceListSize = 1;
+    const int namedResourceListSize = 2;
 
     // Points to the start of a list of resource names.
     extern const char* namedResourceList[];
