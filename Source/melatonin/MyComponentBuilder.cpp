@@ -116,7 +116,7 @@ MyComponentBuilder::createComponentTree(ValueTree &vt,
             DrawableButton *b = (DrawableButton *)c;
             b->setButtonText(vt.getProperty("buttonText"));
 
-            String svgName( vt.getProperty("sourceFile") );
+            String svgName( vt.getProperty("sourceFile").toString() );
             
             int size = 0;
             String rsrcName = svgName.replace(".", "_");
@@ -298,7 +298,7 @@ void InspectorComponent::addComponent()
         String menuItemLabel( String("Add ") + child.getProperty("label").toString() );
         String menuItemContentXML( child.toXmlString() );
         
-        m.addItem (PopupMenu::Item ( menuItemLabel ).setAction ([=, this] { addComponentFromXML( menuItemContentXML ); } ) );
+        m.addItem (PopupMenu::Item ( menuItemLabel ).setAction ([menuItemContentXML, this] { addComponentFromXML( menuItemContentXML ); } ) );
     }
     
     m.show();
