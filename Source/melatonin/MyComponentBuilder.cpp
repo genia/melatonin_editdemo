@@ -235,8 +235,7 @@ void InspectorComponent::deleteComponent()
 {
     if (!selectedComponent)
     {
-        AlertWindow::showMessageBox (
-                                     AlertWindow::InfoIcon, "Error", "Please select a component to delete." );
+        AlertWindow::showMessageBox ( AlertWindow::InfoIcon, "Error", "Please select a component to delete." );
         return;
     }
     
@@ -250,8 +249,7 @@ void InspectorComponent::downloadXML()
 {
     if (!selectedComponent)
     {
-        AlertWindow::showMessageBox (
-                                     AlertWindow::InfoIcon, "Error", "Please select a component to export." );
+        AlertWindow::showMessageBox ( AlertWindow::InfoIcon, "Error", "Please select a component to export." );
         return;
     }
     
@@ -274,16 +272,26 @@ void InspectorComponent::addComponent()
 {
     if (!selectedComponent)
     {
-        AlertWindow::showMessageBox (
-                                     AlertWindow::InfoIcon, "Error", "To add a new component, please select a parent component first." );
+        AlertWindow::showMessageBox ( AlertWindow::InfoIcon, "Error", "To add a new component, please select a parent component first." );
         return;
     }
     
     String xmlFilename( "ComponentTemplates.xml" );
-    int size = 0;
-    String rsrcName = xmlFilename.replace(".", "_");
-    const char *data = BinaryData::getNamedResource (rsrcName.toUTF8(), size);
-    String componentTemplateXML = data;
+    auto xmlFilePath = File::getSpecialLocation (File::userDesktopDirectory)
+        .getChildFile (xmlFilename);
+    File xmlFile( xmlFilePath );
+    String componentTemplateXML;
+    if (xmlFile.existsAsFile())
+    {
+        componentTemplateXML = xmlFile.loadFileAsString();
+    }
+    else
+    {
+        int size = 0;
+        String rsrcName = xmlFilename.replace(".", "_");
+        const char *data = BinaryData::getNamedResource (rsrcName.toUTF8(), size);
+        componentTemplateXML = data;
+    }
     ValueTree valueTree = ValueTree::fromXml(componentTemplateXML);
     PopupMenu m;
     for (auto child : valueTree) {
@@ -299,8 +307,7 @@ void InspectorComponent::addComponentFromXML(const String &componentXML)
 {
     if (!selectedComponent)
     {
-        AlertWindow::showMessageBox (
-                                     AlertWindow::InfoIcon, "Error", "To add a new component, please select a parent component first." );
+        AlertWindow::showMessageBox ( AlertWindow::InfoIcon, "Error", "To add a new component, please select a parent component first." );
         return;
     }
     
@@ -310,8 +317,7 @@ void InspectorComponent::addComponentFromXML(const String &componentXML)
 
     if (newComponent == nullptr)
     {
-        AlertWindow::showMessageBox (
-                                     AlertWindow::InfoIcon, "Error", "Couldn't create new component!" );
+        AlertWindow::showMessageBox ( AlertWindow::InfoIcon, "Error", "Couldn't create new component!" );
         return;
     }
 
